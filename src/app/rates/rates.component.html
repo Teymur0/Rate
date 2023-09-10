@@ -1,0 +1,17 @@
+<div *ngIf="data.isVoted; else nonVoting">
+    <span *ngFor="let rate of rates; let i=index">
+        <i class="bi bi-star-fill" *ngIf="totalRate>=i+1"></i>
+        <i class="bi bi-star-half" *ngIf="calculateHalfNumber(i+1)"></i>
+        <i class="bi bi-star" *ngIf="caculateTotalRate(i) "></i> <!-- i+1 changed to i-->
+    </span>
+    <span>{{totalRate}}</span>
+</div>
+
+<ng-template #nonVoting>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-secondary" *ngFor="let rate of rates; let i=index"
+                (click)="onVote(i+1)">{{i+1}}</button>
+        </div>
+    </div>
+</ng-template>

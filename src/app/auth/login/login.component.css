@@ -1,0 +1,15 @@
+.login-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.login-card {
+  color: white;
+  border-radius: 20px;
+  background: #464c4b;
+  padding: 20px;
+  width: 400px;
+}
